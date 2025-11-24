@@ -590,6 +590,12 @@ public:
             log_info(oss.str());
             return false;
         }
+        // Shift+0: 重置播放速率为 1.0
+        else if (ch == ')') {   // ')' 是 Shift+0 的 ASCII 字符
+            p_.setRate(1.0);
+            log_info("rate reset to 1.0x (Shift+0)");
+            return false;
+        }
         // '0': 重置步长为 1 秒
         else if (ch == '0') {
             step_ = 1.0;
