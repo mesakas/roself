@@ -21,8 +21,8 @@
 ```shell
 
 r                 # 录制工具
-roself            # 监测工具
-roself xxx.bag    # 回放包工具
+roself            # 监测工具（如果有自定义消息需要source）
+roself xxx.bag    # 回放包工具（如果有自定义消息需要source）
 
 ```
 
