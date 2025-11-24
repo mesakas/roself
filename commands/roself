@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 获取当前脚本所在路径
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_PATH="$(dirname "$SCRIPT_DIR")"
+
+
+# 如果没有参数：运行 roself.py
+if [ $# -eq 0 ]; then
+    echo "[INFO] Running roself.py ..."
+    python3 "${PROJECT_PATH}/roself.py"
+    exit 0
+fi
+
+# 若有参数，则检查是否是 .bag 文件
+ARG="$1"
+
+echo $ARG
+
+${PROJECT_PATH}/rosbag_tui_player/bin/ros1_bag_tui_player $ARG

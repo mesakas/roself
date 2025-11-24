@@ -1,0 +1,4 @@
+bags
+.vscode
+rosbag_tui_player/build
+rosbag_tui_player/devel

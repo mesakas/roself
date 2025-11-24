@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rosbag_tui_cpp</name>
+  <version>0.0.1</version>
+  <description>C++ ncurses ROS1 bag player</description>
+
+  <maintainer email="you@example.com">you</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- format=2 里推荐用 depend，表示 build + exec 一起依赖 -->
+  <depend>roscpp</depend>
+  <depend>rosbag</depend>
+  <depend>topic_tools</depend>
+
+  <!-- 如果你想更细分，也可以：
+  <build_depend>roscpp</build_depend>
+  <build_depend>rosbag</build_depend>
+  <build_depend>topic_tools</build_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
+  -->
+
+  <export/>
+</package>

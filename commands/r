@@ -1,0 +1,5 @@
+LPATH=$(which $0)
+LLPATH=$(dirname $LPATH)
+PROJECT_PATH=$(dirname $LLPATH)
+
+python3 ${PROJECT_PATH}/record.py $1

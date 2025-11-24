@@ -1,0 +1,79 @@
+{
+  "planning": {
+    "description": "规控数据",
+    "topic_list": [
+      "/control/ControlAnalysis",
+      "/control/ControlCommand",
+      "/control/Events",
+      "/control/Faults",
+      "/driver/wx_app_contrll",
+      "/drivers/canbus/Chassis",
+      "/drivers/canbus/Faults",
+      "/drivers/canbus/Vehicle",
+      "/drivers/canbus/WheelInfo",
+      "/legion_bridge/Faults",
+      "/legion_bridge/ObuCmd",
+      "/legion_bridge/ObuCmdMsg",
+      "/legion_bridge/RoutingRequest",
+      "/legion_bridge/SpeedLimit",
+      "/legion_bridge/TeleopControlCommand",
+      "/legion_bridge/VehicleTask",
+      "/local_adctrajectory_foxglove",
+      "/local_map/LocalRoutingResponse",
+      "/local_map/MapBoundary",
+      "/localization/slam/Location",
+      "/localization/slam/Map2LocalTF",
+      "/perception/fusion/LaneList",
+      "/perception/fusion/MFLaneList",
+      "/perception/fusion/ObstacleList",
+      "/perception/fusion/TrafficLightMsg",
+      "/planning/ADCTrajectory",
+      "/planning/DiagnosticArray",
+      "/planning/Events",
+      "/planning/Faults",
+      "/planning/ParkingStateDisplay",
+      "/planning/PlanningAnalysis",
+      "/planning/PlanningCmd",
+      "/planning/TrajectoryArray",
+      "/planning/local_ADCTrajectory",
+      "/prediction/Faults",
+      "/prediction/PredictionObstacles",
+      "/prediction_obstalces_foxglove",
+      "/routing/Faults",
+      "/routing/GlobalRouteMsg",
+      "/routing/MapBoundary",
+      "/routing/ParkingInfo",
+      "/routing/ParkingOutInfo",
+      "/routing/RoutingResponse",
+      "/routing/StopInfo",
+      "/routing/TrafficEvents",
+      "/routing/TrafficEventsLocal",
+      "/routing/TrafficLightMsg",
+      "/status"
+    ]
+  },
+  "3_lidar_origin": {
+    "description": "雷达原始数据",
+    "topic_list": [
+      "/livox/imu_192_168_1_5",
+      "/livox/imu_192_168_1_6",
+      "/livox/imu_192_168_1_7",
+      "/livox/lidar_192_168_1_5",
+      "/livox/lidar_192_168_1_6",
+      "/livox/lidar_192_168_1_7"
+    ]
+  },
+  "rslidar_points": {
+    "description": "拼接且去除地面后的点云数据（最终使用的点云）",
+    "topic_list": [
+      "/rslidar_points"
+    ]
+  },
+
+  "rslidar_points_full": {
+    "description": "拼接后的点云（包含地面）",
+    "topic_list": [
+      "/rslidar_points_full"
+    ]
+  }
+}
