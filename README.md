@@ -4,13 +4,31 @@
 > 如果之前安装过旧版本的roself，则需要将.bashrc中的相关PATH删除，并且使用 `pip uninstall roself` 删除python版本
 
 
+
+
+
 ## INSTALL 安装
 
 只需要一行命令, 即可自动安装和编译：
 
 ```shell
+# 初始化安装（需要网络下载依赖）
 ./scripts/install.sh
 ```
+
+
+然后你就可以使用这三个命令：
+```shell
+
+r                 # 录制工具
+roself            # 监测工具
+roself xxx.bag    # 回放包工具
+
+```
+
+
+
+
 
 
 安装完成后，重启终端或者使用: `source ~/.bashrc` 即可使用全部功能
