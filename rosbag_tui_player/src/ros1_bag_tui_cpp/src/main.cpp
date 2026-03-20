@@ -624,6 +624,10 @@ public:
 
     // per-frame tick: call BagPlayer::tick and handle loop/segment logic
     void tick(double dt) {
+        // 记住这一帧调用 tick 之前的播放状态
+        bool was_playing = p_.playing();
+
+        // 推进播放（这里可能会因为到达 bag 末尾而把 playing 置为 false）
         p_.tick(dt);
         double cur = p_.cursor();
 
@@ -632,7 +636,7 @@ public:
             double a = std::min(loop_a_.value(), loop_b_.value());
             double b = std::max(loop_a_.value(), loop_b_.value());
 
-            // clamp cursor into [a, b]
+            // 把光标 clamp 在 [a, b]
             if (cur < a) {
                 p_.setCursor(a);
                 cur = a;
@@ -642,7 +646,7 @@ public:
                 cur = b;
             }
 
-            // reached end of segment
+            // 分段 loop 逻辑保持不变（这里用当前的 p_.playing() 即可）
             if (p_.playing() && cur >= b - 1e-9) {
                 if (loop_enabled_) {
                     p_.setCursor(a);
@@ -651,13 +655,15 @@ public:
                 }
             }
         } else {
-            // global loop
-            if (loop_enabled_ && p_.playing() &&
+            // 全局 loop：只有“上一帧本来就在播放”的情况下，才允许在末尾 loop 回 0
+            if (loop_enabled_ && was_playing &&
                 cur >= p_.duration() - 1e-9) {
                 p_.setCursor(0.0);
+                p_.play();   // 覆盖掉 BagPlayer::tick 里因为到末尾自动 pause 的效果
             }
         }
     }
+
 
     void draw(WINDOW* win) {
         if (!win) return;
